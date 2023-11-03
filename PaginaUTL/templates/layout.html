@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/observer.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
     <body>
@@ -24,11 +25,49 @@
     <script>
         const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
+            const lastClass = entry.target.classList.item(entry.target.classList.length - 1);
             if (entry.isIntersecting) {
-                entry.target.classList.add('show');
+                if(lastClass == 'hright'){
+                    console.log('Es hright');
+                    entry.target.classList.remove('hright');
+                    entry.target.classList.add('sright');
+                }
+                else if(lastClass == 'hleft'){
+                    console.log('Es hleft');
+                    entry.target.classList.remove('hleft');
+                    entry.target.classList.add('sleft');
+                }
+                else if(lastClass == 'hbot'){
+                    console.log('Es hbot');
+                    entry.target.classList.remove('hbot');
+                    entry.target.classList.add('sbot');
+                }
+                else if(lastClass == 'htop'){
+                    console.log('Es htop');
+                    entry.target.classList.remove('htop');
+                    entry.target.classList.add('stop');
+                }
             } else {
-                entry.target.classList.remove('show');
+                if(lastClass == 'sright'){
+                    console.log('Es sright');
+                    entry.target.classList.remove('sright');
+                    entry.target.classList.add('hright');
+                }
+                else if(lastClass == 'sleft'){
+                    console.log('Es sleft');
+                    entry.target.classList.remove('sleft');
+                    entry.target.classList.add('hleft');
+                }
+                else if(lastClass == 'sbot'){
+                    console.log('Es sbot');
+                    entry.target.classList.remove('sbot');
+                    entry.target.classList.add('hbot');
+                }
+                else if(lastClass == 'stop'){
+                    console.log('Es stop');
+                    entry.target.classList.remove('stop');
+                    entry.target.classList.add('htop');
+                }
             }
         });
     });
