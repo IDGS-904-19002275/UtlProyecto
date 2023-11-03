@@ -116,3 +116,13 @@
     min-height: 7rem;
 }
 
+.utl-image{
+    border-radius: 5rem;
+}
+
+.is-carrer{
+    min-width: 100%;
+    max-height: 10rem;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
