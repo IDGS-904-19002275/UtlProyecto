@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{%block contenido%}
+<div class="hero is-white is-fullheight has-utl-home-background bg-fixed">
+    <div class="padding-2">
+        <div class="hero-head">
+            <img src="../static/img/logo.png" alt="">
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6">
+                        <h1 class="changerText big-title has-text-white" id="changeText"></h1>
+                    </div>
+
+                    <div class="column is-6">
+                        <div class="card padding-2 radius-1 hidden">
+                            <div class="title-div">
+                                <h1 class="title is-title">Conoce la UTL</h1>
+                            </div>
+                            <hr>
+                                <div class="is-utl has-text-white subtitle">
+                                    <a href="/oferta" class="hidden" style="--bg-color: #169F8D">Oferta Educativa</a>
+                                    <a href="" class="hidden" style="--bg-color: #168C8B">Admisiones</a>
+                                    <a href="" class="hidden" style="--bg-color: #167A8A">Servicios Escolares</a>
+                                    <a href="" class="hidden" style="--bg-color: #166788">Conoce UTL</a>
+                                    <a href="" class="hidden" style="--bg-color: #155486">Comunidad UTL</a>
+                                    <a href="" class="hidden" style="--bg-color: #154285">Contáctanos</a>
+                                    <a href="" class="hidden" style="--bg-color: #152F83">Calendario Escolar</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hero is-dark is-fullheight">
+    
+</div>
+
+<script>
+var index = 0;
+var frases = [
+    'Bienvenido a la Universidad del Cambio',
+    'Aprende, crece y transforma tu futuro',
+    'Explora nuevas oportunidades de aprendizaje',
+    'Donde la innovación y la excelencia se encuentran',
+    'Descubre tu potencial en nuestra comunidad',
+    'Conviértete en el arquitecto de tu destino educativo'
+];
+
+var text = document.getElementById('changeText');
+text.classList.add('visible');
+
+function cambiarTexto() {
+    text.innerHTML = frases[index];
+    
+    setTimeout(function() {
+        text.classList.remove('visible');
+        
+        setTimeout(function() {
+            index = (index + 1) % frases.length; 
+            text.classList.add('visible'); 
+        }, 2000); 
+    }, 5000); 
+}
+
+cambiarTexto();
+
+var intervalo = setInterval(cambiarTexto, 7000); 
+</script>
+
+{%endblock%}
