@@ -10,6 +10,10 @@ def index():
 def oferta():
     return render_template("oferta.html", page_name = "Oferta Educativa", pagestyle = 'normal')
 
+@app.route('/aulavirtual', methods=['GET'])
+def aulavirtual():
+    return render_template("aulavirtual.html", page_name = "Aula Virtual", pagestyle = 'normal')
+
 @app.route('/carreras/<carrera>', methods=['GET'])
 def ofertacarrera(carrera):
     tarjetas = [
@@ -37,7 +41,7 @@ def ofertacarrera(carrera):
             'imagen': 'https://www.becas-santander.com/content/dam/becasmicrosites/blog/metodolog%C3%ADas-de-desarrollo-de-software.jpg'
         },
         {
-            'titulo': 'INGENIERÍA EN REDES INTELIGENTES Y CIBERSEGURIDAD',
+            'titulo': 'INGENIERÍA EN REDES INTELIGENTES Y CIBERSEGURIDAD 2',
             'imagen': 'https://tecnologiasuth.com/wp-content/uploads/2020/02/slider-beside-area-TI-RD-2.jpg'
         }
     ]

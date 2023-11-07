@@ -48,6 +48,13 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.has-aulav-bg{
+    background-image: linear-gradient(var(--black-transparent), var(--black-transparent)), url('../img/aulav.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 /* 
 .has-bg-01{
     background-image: url('https://i.ytimg.com/vi/BtWc_sa5leo/maxresdefault.jpg');
@@ -117,7 +124,7 @@
 }
 
 .utl-image{
-    border-radius: 5rem;
+    border-radius: 5rem 0;
 }
 
 .is-carrer{
