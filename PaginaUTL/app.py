@@ -10,6 +10,10 @@ def index():
 def oferta():
     return render_template("oferta.html", page_name = "Oferta Educativa", pagestyle = 'normal')
 
+@app.route('/aulavirtual', methods=['GET'])
+def aulavirtual():
+    return render_template("aulavirtual.html", page_name = "Aula Virtual", pagestyle = 'normal')
+
 @app.route('/carreras/<carrera>', methods=['GET'])
 def ofertacarrera(carrera):
     tarjetas = [

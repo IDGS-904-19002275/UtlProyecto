@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if carreras == 'tsu' %}
+<div class="hero is-dark is-fullheight has-utl-one-background">
+    <div class="hero-body">
+        <div class = "columns">
+            <div class="column is-utl">
+                <h1 class="hidden column title hleft">Carreras de</h1>
+                <h1 class="hidden column big-title hleft">TSU</h1>
+                <h1 class="hidden big-title hleft">Técnico</h1>
+                <h1 class="hidden big-title hleft">Superior</h1>
+                <h1 class="hidden big-title hleft">Universitario</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                {% for tarjeta in tarjetas %}
+                    <div class="column is-one-third">
+                        <div class="hidden card hbot">
+                            <div class="card-content">
+                                <img class="image is-carrer" src="{{tarjeta['imagen']}}" alt="">
+                                <p class="subtitle">{{ tarjeta['titulo'] }}</p>
+                                <a class="btn is-primary" href="">Leer mas</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% else %}
+<div class="hero is-dark is-fullheight has-utl-one-background">
+    <div class="hero-body">
+        <div class = "columns">
+            <div class="column is-utl">
+                <h1 class="hidden column title hleft">Carreras de</h1>
+                <h1 class="hidden column big-title hleft">Ingeniería</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                {% for tarjeta in tarjetas %}
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-content">
+                                <img class="image is-carrer" src="{{tarjeta['imagen']}}" alt="">
+                                <p class="subtitle">{{ tarjeta['titulo'] }}</p>
+                                <a class="btn is-primary" href="">Leer mas</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% endblock %}
