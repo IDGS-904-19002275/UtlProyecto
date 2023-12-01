@@ -67,5 +67,21 @@ def centromedico():
 def becas():
     return render_template("becas.html", page_name = "Becas y ayudas", pagestyle = 'normal')
 
+@app.route('/historia', methods=['GET'])
+def historia():
+    return render_template("historia.html", page_name = "Historia", pagestyle = 'normal')
+
+@app.route('/filosofia', methods=['GET'])
+def filosofia():
+    return render_template("filosofia.html", page_name = "Filosofia", pagestyle = 'normal')
+
+@app.route('/planteles', methods=['GET'])
+def planteles():
+    return render_template("planteles.html", page_name = "Planteles", pagestyle = 'normal')
+
+@app.route('/contacto', methods=['GET'])
+def contacto():
+    return render_template("contacto.html", page_name = "Contacto", pagestyle = 'normal')
+
 if __name__ == "__main__":
     app.run(debug = True, port=3000)
