@@ -55,5 +55,17 @@ def ofertacarrera(carrera):
 
     return render_template("carreras.html", page_name = "Carreras " + carrera, pagestyle = 'normal', carreras = carrera, tarjetas = tarj)
 
+@app.route('/centroinfo', methods=['GET'])
+def centroinfo():
+    return render_template("centroinfo.html", page_name = "Centro de Informacion", pagestyle = 'normal')
+
+@app.route('/centromedico', methods=['GET'])
+def centromedico():
+    return render_template("centromedico.html", page_name = "Centro Medico", pagestyle = 'normal')
+
+@app.route('/becas', methods=['GET'])
+def becas():
+    return render_template("becas.html", page_name = "Becas y ayudas", pagestyle = 'normal')
+
 if __name__ == "__main__":
     app.run(debug = True, port=3000)
